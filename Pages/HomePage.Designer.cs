@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Card = new System.Windows.Forms.Panel();
+            this.konum = new System.Windows.Forms.Label();
             this.Fiyat = new System.Windows.Forms.Label();
+            this.User = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.Label();
             this.Baslik = new System.Windows.Forms.Label();
             this.Resim = new System.Windows.Forms.PictureBox();
@@ -47,8 +49,6 @@
             this.MyProducts = new System.Windows.Forms.LinkLabel();
             this.Carts = new System.Windows.Forms.LinkLabel();
             this.Giris = new System.Windows.Forms.LinkLabel();
-            this.konum = new System.Windows.Forms.Label();
-            this.User = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resim)).BeginInit();
@@ -86,43 +86,67 @@
             this.Card.TabIndex = 0;
             this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
             // 
+            // konum
+            // 
+            this.konum.AutoSize = true;
+            this.konum.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.konum.Location = new System.Drawing.Point(4, 368);
+            this.konum.Name = "konum";
+            this.konum.Size = new System.Drawing.Size(68, 25);
+            this.konum.TabIndex = 5;
+            this.konum.Text = "Konum";
+            // 
             // Fiyat
             // 
             this.Fiyat.AutoSize = true;
             this.Fiyat.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fiyat.Location = new System.Drawing.Point(4, 315);
+            this.Fiyat.Location = new System.Drawing.Point(4, 314);
             this.Fiyat.Name = "Fiyat";
             this.Fiyat.Size = new System.Drawing.Size(50, 25);
             this.Fiyat.TabIndex = 4;
             this.Fiyat.Text = "Fiyat";
             // 
+            // User
+            // 
+            this.User.AutoSize = true;
+            this.User.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.User.Location = new System.Drawing.Point(2, 0);
+            this.User.Name = "User";
+            this.User.Size = new System.Drawing.Size(52, 25);
+            this.User.TabIndex = 6;
+            this.User.Text = "From";
+            this.User.Click += new System.EventHandler(this.User_Click);
+            // 
             // Description
             // 
             this.Description.AutoSize = true;
             this.Description.Font = new System.Drawing.Font("Elephant", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.Location = new System.Drawing.Point(0, 259);
+            this.Description.Location = new System.Drawing.Point(0, 258);
+            this.Description.MaximumSize = new System.Drawing.Size(5000, 100);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(100, 25);
+            this.Description.Size = new System.Drawing.Size(475, 25);
             this.Description.TabIndex = 3;
-            this.Description.Text = "Açıklama";
+            this.Description.Text = "Açıklama.........................    ........................................... " +
+    "..";
             // 
             // Baslik
             // 
             this.Baslik.AutoSize = true;
             this.Baslik.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Baslik.Location = new System.Drawing.Point(-3, 205);
+            this.Baslik.Location = new System.Drawing.Point(2, 218);
+            this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
             this.Baslik.Name = "Baslik";
-            this.Baslik.Size = new System.Drawing.Size(87, 54);
+            this.Baslik.Size = new System.Drawing.Size(87, 40);
             this.Baslik.TabIndex = 2;
             this.Baslik.Text = "Baslik\r\n\r\n\r\n";
             this.Baslik.Click += new System.EventHandler(this.Baslik_Click);
             // 
             // Resim
             // 
-            this.Resim.Location = new System.Drawing.Point(0, 43);
+            this.Resim.Location = new System.Drawing.Point(31, 27);
             this.Resim.Name = "Resim";
-            this.Resim.Size = new System.Drawing.Size(508, 159);
+            this.Resim.Size = new System.Drawing.Size(447, 188);
             this.Resim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Resim.TabIndex = 1;
             this.Resim.TabStop = false;
@@ -264,26 +288,6 @@
             this.Giris.TabStop = true;
             this.Giris.Text = "Cikis Yap";
             this.Giris.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Giris_LinkClicked);
-            // 
-            // konum
-            // 
-            this.konum.AutoSize = true;
-            this.konum.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.konum.Location = new System.Drawing.Point(4, 369);
-            this.konum.Name = "konum";
-            this.konum.Size = new System.Drawing.Size(68, 25);
-            this.konum.TabIndex = 5;
-            this.konum.Text = "Konum";
-            // 
-            // User
-            // 
-            this.User.AutoSize = true;
-            this.User.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User.Location = new System.Drawing.Point(2, 0);
-            this.User.Name = "User";
-            this.User.Size = new System.Drawing.Size(52, 25);
-            this.User.TabIndex = 6;
-            this.User.Text = "From";
             // 
             // HomePage
             // 

@@ -91,6 +91,7 @@ namespace Ui.Pages
                 titleLabel.Text = product.Title;
                 titleLabel.Font = Baslik.Font;
                 titleLabel.ForeColor = Baslik.ForeColor;
+                titleLabel.Size = Baslik.Size;
 
                 titleLabel.Location = Baslik.Location;
 
@@ -98,6 +99,7 @@ namespace Ui.Pages
                 descriptionLabel.Text = product.Description;
                 descriptionLabel.ForeColor = Description.ForeColor;
                 descriptionLabel.Font = Description.Font;
+                descriptionLabel.Size = descriptionLabel.Size;
                 descriptionLabel.Location = Description.Location;
 
                 Label price = new Label();
@@ -159,7 +161,9 @@ namespace Ui.Pages
                 }
                 else
                 {
-                   
+                    EditProductPage page = new EditProductPage(id: productId);
+                    page.Show();
+                    this.Close();
                 }
 
             }
@@ -215,14 +219,6 @@ namespace Ui.Pages
             return products;
         }
 
-        private void Card_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void delete_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

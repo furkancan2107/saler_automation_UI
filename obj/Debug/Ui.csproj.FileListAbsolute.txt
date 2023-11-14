@@ -18,3 +18,8 @@ C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.ChangePassword.resour
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.AddProduct.resources
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.MyCarts.resources
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.MyProductsPagecs.resources
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.EditProductPage.resources
+C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.exe.manifest
+C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.application
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.exe.manifest
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.application

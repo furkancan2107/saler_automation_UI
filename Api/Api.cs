@@ -1,4 +1,5 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ui.requests;
 
 namespace Ui.Api
 {
@@ -87,7 +89,64 @@ namespace Ui.Api
                     MessageBox.Show("Kullanıcı veya ürün bulunamadı. Hata: " + ex.ToString());
                 }
             }
-
+            
         }
+
+        // sipariş al 
+        public async Task createOrder(int userId, int productId)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string apiURL = Url.url + "Order/create/" + userId + "/" + productId;
+                    HttpResponseMessage response = await client.PostAsync(apiURL, null);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Siparişiniz alındı");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Siparişiniz alınamadi. HTTP Hata Kodu: " + response.StatusCode);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kullanıcı veya ürün bulunamadı. Hata: " + ex.ToString());
+                }
+            }
+        }
+
+        public async Task<ProductResponse> getProduct(int productId)
+        {
+            ProductResponse product = new ProductResponse();
+            using (HttpClient client =new HttpClient())
+            {
+              
+                try
+                {
+                    string apiUrl = Url.url + "Product/get/" + productId;
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        product = JsonConvert.DeserializeObject<ProductResponse>(json);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ürün Bulunamadi. HTTP Hata Kodu: " + response.StatusCode);
+                    }
+
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Kullanıcı veya ürün bulunamadı. Hata: " + ex.ToString());
+                }
+            }
+            return product;
+            
+        }
+
+
     }
 }

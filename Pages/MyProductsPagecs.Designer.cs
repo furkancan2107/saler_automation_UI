@@ -36,14 +36,14 @@
             this.Giris = new System.Windows.Forms.LinkLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Card = new System.Windows.Forms.Panel();
+            this.konum = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
             this.Fiyat = new System.Windows.Forms.Label();
             this.Description = new System.Windows.Forms.Label();
-            this.Baslik = new System.Windows.Forms.Label();
             this.Resim = new System.Windows.Forms.PictureBox();
             this.update = new System.Windows.Forms.Button();
-            this.konum = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.Baslik = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
@@ -63,7 +63,7 @@
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1481, 204);
+            this.panel1.Size = new System.Drawing.Size(1481, 68);
             this.panel1.TabIndex = 6;
             // 
             // Anasayfa
@@ -149,11 +149,11 @@
             // Card
             // 
             this.Card.BackColor = System.Drawing.Color.Transparent;
+            this.Card.Controls.Add(this.Baslik);
             this.Card.Controls.Add(this.konum);
             this.Card.Controls.Add(this.delete);
             this.Card.Controls.Add(this.Fiyat);
             this.Card.Controls.Add(this.Description);
-            this.Card.Controls.Add(this.Baslik);
             this.Card.Controls.Add(this.Resim);
             this.Card.Controls.Add(this.update);
             this.Card.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -161,7 +161,16 @@
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(622, 372);
             this.Card.TabIndex = 1;
-            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
+            // 
+            // konum
+            // 
+            this.konum.AutoSize = true;
+            this.konum.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.konum.Location = new System.Drawing.Point(7, 283);
+            this.konum.Name = "konum";
+            this.konum.Size = new System.Drawing.Size(68, 25);
+            this.konum.TabIndex = 6;
+            this.konum.Text = "Konum";
             // 
             // delete
             // 
@@ -171,13 +180,12 @@
             this.delete.TabIndex = 5;
             this.delete.Text = "Sil";
             this.delete.UseVisualStyleBackColor = true;
-            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // Fiyat
             // 
             this.Fiyat.AutoSize = true;
             this.Fiyat.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fiyat.Location = new System.Drawing.Point(25, 331);
+            this.Fiyat.Location = new System.Drawing.Point(7, 331);
             this.Fiyat.Name = "Fiyat";
             this.Fiyat.Size = new System.Drawing.Size(50, 25);
             this.Fiyat.TabIndex = 4;
@@ -187,22 +195,12 @@
             // 
             this.Description.AutoSize = true;
             this.Description.Font = new System.Drawing.Font("Elephant", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Description.Location = new System.Drawing.Point(23, 235);
+            this.Description.Location = new System.Drawing.Point(3, 233);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(100, 25);
+            this.Description.Size = new System.Drawing.Size(610, 25);
             this.Description.TabIndex = 3;
-            this.Description.Text = "Açıklama";
-            // 
-            // Baslik
-            // 
-            this.Baslik.AutoSize = true;
-            this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Baslik.Location = new System.Drawing.Point(25, 195);
-            this.Baslik.Name = "Baslik";
-            this.Baslik.Size = new System.Drawing.Size(93, 18);
-            this.Baslik.TabIndex = 2;
-            this.Baslik.Text = "Baslik";
+            this.Description.Text = "Aciklama........................................................................." +
+    ".............................";
             // 
             // Resim
             // 
@@ -222,15 +220,17 @@
             this.update.Text = "Düzenle";
             this.update.UseVisualStyleBackColor = true;
             // 
-            // konum
+            // Baslik
             // 
-            this.konum.AutoSize = true;
-            this.konum.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.konum.Location = new System.Drawing.Point(23, 283);
-            this.konum.Name = "konum";
-            this.konum.Size = new System.Drawing.Size(68, 25);
-            this.konum.TabIndex = 6;
-            this.konum.Text = "Konum";
+            this.Baslik.AutoSize = true;
+            this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Baslik.Location = new System.Drawing.Point(5, 192);
+            this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
+            this.Baslik.Name = "Baslik";
+            this.Baslik.Size = new System.Drawing.Size(506, 18);
+            this.Baslik.TabIndex = 7;
+            this.Baslik.Text = "Baslik...........................................................";
             // 
             // MyProductsPagecs
             // 
@@ -270,10 +270,10 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Label Fiyat;
         private System.Windows.Forms.Label Description;
-        private System.Windows.Forms.Label Baslik;
         private System.Windows.Forms.PictureBox Resim;
         private System.Windows.Forms.Button update;
         private System.Windows.Forms.Label konum;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label Baslik;
     }
 }

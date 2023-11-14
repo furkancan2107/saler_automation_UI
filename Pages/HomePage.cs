@@ -110,6 +110,7 @@ namespace Ui.Pages
                 descriptionLabel.Text = product.Description;
                 descriptionLabel.ForeColor = Description.ForeColor;
                 descriptionLabel.Font = Description.Font;
+                descriptionLabel.Size = Description.Size;
                 descriptionLabel.Location = Description.Location;
 
                 Label price = new Label();
@@ -123,7 +124,7 @@ namespace Ui.Pages
                 location.Location = konum.Location;
 
                 Label user = new Label();
-                user.Text = "From " + product.User.Username;
+                user.Text = product.User.Username;
                 user.Font = User.Font;
                 user.Location = User.Location;
 
@@ -154,14 +155,19 @@ namespace Ui.Pages
             }
         }
 
-        private void AddCart_Click(object sender, EventArgs e)
+        private async void AddCart_Click(object sender, EventArgs e)
         {
             ApiOperations api = new ApiOperations();
             if (sender is Button addButton)
             {
                 int productId = (int)addButton.Tag;
+                ProductResponse db = await api.getProduct(productId);
                 if (İnformation.isLogin==false) {
                     MessageBox.Show("sepete eklemek için Lütfen giriş yapın");
+                }
+                else if (İnformation.id==db.UserId)
+                {
+                    MessageBox.Show("Kendi Ürününü sepete ekleyemezsin");
                 }
                 else
                 {
@@ -232,6 +238,11 @@ namespace Ui.Pages
         private void Giris_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -81,6 +81,7 @@ namespace Ui
                 İnformation.isLogin = true;
                 İnformation.username = user.Email;
                 İnformation.id = int.Parse(jsonContent);
+                this.Hide();
                 
             }
             else

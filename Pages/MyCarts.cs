@@ -16,6 +16,7 @@ namespace Ui.Pages
     public partial class MyCarts : Form
     {
         decimal total_price = 0;
+        ApiOperations api = new ApiOperations();
         public MyCarts()
         {
             InitializeComponent();
@@ -126,6 +127,7 @@ namespace Ui.Pages
                 titleLabel.Text = cart.Product.Title;
                 titleLabel.Font = Baslik.Font;
                 titleLabel.ForeColor = Baslik.ForeColor;
+                titleLabel.Size = Baslik.Size;
 
                 titleLabel.Location = Baslik.Location;
 
@@ -134,6 +136,7 @@ namespace Ui.Pages
                 descriptionLabel.ForeColor = Description.ForeColor;
                 descriptionLabel.Font = Description.Font;
                 descriptionLabel.Location = Description.Location;
+                descriptionLabel.Size = Description.Size;
 
                 Label price = new Label();
                 price.Text = cart.Product.Price + " Tl";
@@ -205,6 +208,36 @@ namespace Ui.Pages
         private void addCart_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Card_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private async void Öde_Click(object sender, EventArgs e)
+        {
+            List<CartDto> carts = await GetCarts();
+            foreach(var cart in carts)
+            {
+                try
+                {
+                    // siparişlere eklenecek 
+                    api.createOrder(İnformation.id, cart.Product.Id);
+                    // burada sepettekiller tek tek silinecek
+                    api.deleteCart(cart.Id);
+                    MyCarts myCarts = new MyCarts();
+                    myCarts.Show();
+                    this.Close();
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                
+
+            }
         }
     }
 }

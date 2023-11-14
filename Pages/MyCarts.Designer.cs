@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Anasayfa = new System.Windows.Forms.LinkLabel();
-            this.toplamfiyat = new System.Windows.Forms.Label();
-            this.Öde = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.MyProducts = new System.Windows.Forms.LinkLabel();
             this.Carts = new System.Windows.Forms.LinkLabel();
             this.Giris = new System.Windows.Forms.LinkLabel();
+            this.toplamfiyat = new System.Windows.Forms.Label();
+            this.Öde = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Card = new System.Windows.Forms.Panel();
             this.Fiyat = new System.Windows.Forms.Label();
@@ -44,6 +44,8 @@
             this.Resim = new System.Windows.Forms.PictureBox();
             this.addCart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
@@ -56,16 +58,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.Anasayfa);
-            this.panel1.Controls.Add(this.toplamfiyat);
-            this.panel1.Controls.Add(this.Öde);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.MyProducts);
             this.panel1.Controls.Add(this.Carts);
             this.panel1.Controls.Add(this.Giris);
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.panel1.Location = new System.Drawing.Point(1, 12);
+            this.panel1.Location = new System.Drawing.Point(3, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1642, 323);
+            this.panel1.Size = new System.Drawing.Size(1642, 82);
             this.panel1.TabIndex = 7;
             // 
             // Anasayfa
@@ -81,29 +81,6 @@
             this.Anasayfa.TabStop = true;
             this.Anasayfa.Text = "Ana Sayfa";
             this.Anasayfa.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Anasayfa_LinkClicked_1);
-            // 
-            // toplamfiyat
-            // 
-            this.toplamfiyat.AutoSize = true;
-            this.toplamfiyat.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toplamfiyat.Location = new System.Drawing.Point(1159, 142);
-            this.toplamfiyat.Name = "toplamfiyat";
-            this.toplamfiyat.Size = new System.Drawing.Size(151, 25);
-            this.toplamfiyat.TabIndex = 5;
-            this.toplamfiyat.Text = "Toplam Fiyat : 0 tl";
-            this.toplamfiyat.Click += new System.EventHandler(this.toplamfiyat_Click);
-            // 
-            // Öde
-            // 
-            this.Öde.BackColor = System.Drawing.Color.Orange;
-            this.Öde.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Öde.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Öde.Location = new System.Drawing.Point(1164, 211);
-            this.Öde.Name = "Öde";
-            this.Öde.Size = new System.Drawing.Size(114, 46);
-            this.Öde.TabIndex = 9;
-            this.Öde.Text = "Öde";
-            this.Öde.UseVisualStyleBackColor = false;
             // 
             // linkLabel1
             // 
@@ -161,6 +138,30 @@
             this.Giris.Text = "Cikis Yap";
             this.Giris.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Giris_LinkClicked);
             // 
+            // toplamfiyat
+            // 
+            this.toplamfiyat.AutoSize = true;
+            this.toplamfiyat.Font = new System.Drawing.Font("Impact", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toplamfiyat.Location = new System.Drawing.Point(1223, 163);
+            this.toplamfiyat.Name = "toplamfiyat";
+            this.toplamfiyat.Size = new System.Drawing.Size(151, 25);
+            this.toplamfiyat.TabIndex = 5;
+            this.toplamfiyat.Text = "Toplam Fiyat : 0 tl";
+            this.toplamfiyat.Click += new System.EventHandler(this.toplamfiyat_Click);
+            // 
+            // Öde
+            // 
+            this.Öde.BackColor = System.Drawing.Color.Orange;
+            this.Öde.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Öde.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Öde.Location = new System.Drawing.Point(1228, 219);
+            this.Öde.Name = "Öde";
+            this.Öde.Size = new System.Drawing.Size(114, 46);
+            this.Öde.TabIndex = 9;
+            this.Öde.Text = "Öde";
+            this.Öde.UseVisualStyleBackColor = false;
+            this.Öde.Click += new System.EventHandler(this.Öde_Click);
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.Card);
@@ -182,8 +183,9 @@
             this.Card.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Card.Location = new System.Drawing.Point(3, 3);
             this.Card.Name = "Card";
-            this.Card.Size = new System.Drawing.Size(483, 346);
+            this.Card.Size = new System.Drawing.Size(491, 394);
             this.Card.TabIndex = 1;
+            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
             // 
             // Fiyat
             // 
@@ -200,27 +202,29 @@
             this.Description.AutoSize = true;
             this.Description.Font = new System.Drawing.Font("Elephant", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Description.Location = new System.Drawing.Point(23, 235);
+            this.Description.MaximumSize = new System.Drawing.Size(5000, 50);
             this.Description.Name = "Description";
-            this.Description.Size = new System.Drawing.Size(100, 25);
+            this.Description.Size = new System.Drawing.Size(445, 25);
             this.Description.TabIndex = 3;
-            this.Description.Text = "Açıklama";
+            this.Description.Text = "Açıklama.....................................................................";
             // 
             // Baslik
             // 
             this.Baslik.AutoSize = true;
             this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Baslik.Location = new System.Drawing.Point(25, 195);
+            this.Baslik.Location = new System.Drawing.Point(25, 202);
+            this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
             this.Baslik.Name = "Baslik";
-            this.Baslik.Size = new System.Drawing.Size(93, 18);
+            this.Baslik.Size = new System.Drawing.Size(443, 18);
             this.Baslik.TabIndex = 2;
-            this.Baslik.Text = "Baslik";
+            this.Baslik.Text = "Baslik..................................................";
             // 
             // Resim
             // 
-            this.Resim.Location = new System.Drawing.Point(3, 3);
+            this.Resim.Location = new System.Drawing.Point(28, 3);
             this.Resim.Name = "Resim";
-            this.Resim.Size = new System.Drawing.Size(451, 174);
+            this.Resim.Size = new System.Drawing.Size(423, 170);
             this.Resim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Resim.TabIndex = 1;
             this.Resim.TabStop = false;
@@ -247,6 +251,30 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Orange;
+            this.button2.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(1228, 317);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(288, 46);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Siparislerim";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.Location = new System.Drawing.Point(1228, 396);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(288, 46);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Gelen Siparisler";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // MyCarts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,8 +282,12 @@
             this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(1554, 777);
             this.ControlBox = false;
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.toplamfiyat);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.Öde);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ImeMode = System.Windows.Forms.ImeMode.On;
@@ -269,6 +301,7 @@
             this.Card.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resim)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,5 +323,7 @@
         private System.Windows.Forms.Label toplamfiyat;
         private System.Windows.Forms.Button Öde;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
