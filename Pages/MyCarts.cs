@@ -239,5 +239,20 @@ namespace Ui.Pages
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MyOrdersPage myProducts = new MyOrdersPage();
+            myProducts.Show();
+            this.Hide();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            InComingOrdersPage ordersPage = new InComingOrdersPage();
+            ordersPage.Show();
+            this.Hide();
+        }
     }
 }

@@ -144,11 +144,23 @@
     <Compile Include="Pages\EditProductPage.Designer.cs">
       <DependentUpon>EditProductPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\InComingOrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\InComingOrdersPage.Designer.cs">
+      <DependentUpon>InComingOrdersPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MyCarts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\MyCarts.Designer.cs">
       <DependentUpon>MyCarts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyOrdersPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\MyOrdersPage.Designer.cs">
+      <DependentUpon>MyOrdersPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\MyProductsPagecs.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,8 @@
     <Compile Include="requests\CartDto.cs" />
     <Compile Include="requests\ChangePasswordRequest.cs" />
     <Compile Include="requests\ForgotPasswordRequest.cs" />
+    <Compile Include="requests\Order.cs" />
+    <Compile Include="requests\OrderStatus.cs" />
     <Compile Include="requests\ProductResponse.cs" />
     <Compile Include="requests\UpdateProductRequest.cs" />
     <Compile Include="requests\UserDto.cs" />
@@ -202,8 +216,14 @@
     <EmbeddedResource Include="Pages\HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\InComingOrdersPage.resx">
+      <DependentUpon>InComingOrdersPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\MyCarts.resx">
       <DependentUpon>MyCarts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MyOrdersPage.resx">
+      <DependentUpon>MyOrdersPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MyProductsPagecs.resx">
       <DependentUpon>MyProductsPagecs.cs</DependentUpon>

@@ -23,3 +23,5 @@ C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.exe.manifest
 C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.application
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.exe.manifest
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.application
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.InComingOrdersPage.resources
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.MyOrdersPage.resources

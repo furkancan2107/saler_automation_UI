@@ -85,13 +85,7 @@ namespace Ui.Pages
                 card.Size = Card.Size;
                 card.BackColor = Card.BackColor;
                 card.AutoScroll = true;
-                
-                
-
-              
-
-
-
+                               
                 PictureBox imageBox = new PictureBox();
                 imageBox.ImageLocation = product.Image;
                 imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -103,9 +97,8 @@ namespace Ui.Pages
                 titleLabel.Font = Baslik.Font;
                 titleLabel.ForeColor = Baslik.ForeColor;
                 titleLabel.Size = new Size(200,30);
-
                 titleLabel.Location = Baslik.Location;
-
+           
                 Label descriptionLabel = new Label();
                 descriptionLabel.Text = product.Description;
                 descriptionLabel.ForeColor = Description.ForeColor;
@@ -128,7 +121,6 @@ namespace Ui.Pages
                 user.Font = User.Font;
                 user.Location = User.Location;
 
-
                 Button AddCart = new Button();
                 addCart.Tag = product.Id;
                 AddCart.Text = "Sepete Ekle";
@@ -138,10 +130,7 @@ namespace Ui.Pages
                 AddCart.Location = addCart.Location;
                 AddCart.Tag = product.Id;
 
-               
                 AddCart.Click += AddCart_Click;
-
-
 
                 card.Controls.Add(imageBox);
                 card.Controls.Add(titleLabel);

@@ -36,6 +36,7 @@
             this.Giris = new System.Windows.Forms.LinkLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Card = new System.Windows.Forms.Panel();
+            this.Baslik = new System.Windows.Forms.Label();
             this.konum = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.Button();
             this.Fiyat = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.Resim = new System.Windows.Forms.PictureBox();
             this.update = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.Baslik = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
@@ -161,6 +161,19 @@
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(622, 372);
             this.Card.TabIndex = 1;
+            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
+            // 
+            // Baslik
+            // 
+            this.Baslik.AutoSize = true;
+            this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Baslik.Location = new System.Drawing.Point(5, 192);
+            this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
+            this.Baslik.Name = "Baslik";
+            this.Baslik.Size = new System.Drawing.Size(506, 18);
+            this.Baslik.TabIndex = 7;
+            this.Baslik.Text = "Baslik...........................................................";
             // 
             // konum
             // 
@@ -219,18 +232,6 @@
             this.update.TabIndex = 0;
             this.update.Text = "Düzenle";
             this.update.UseVisualStyleBackColor = true;
-            // 
-            // Baslik
-            // 
-            this.Baslik.AutoSize = true;
-            this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Baslik.Location = new System.Drawing.Point(5, 192);
-            this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
-            this.Baslik.Name = "Baslik";
-            this.Baslik.Size = new System.Drawing.Size(506, 18);
-            this.Baslik.TabIndex = 7;
-            this.Baslik.Text = "Baslik...........................................................";
             // 
             // MyProductsPagecs
             // 

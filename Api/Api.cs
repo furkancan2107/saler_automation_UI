@@ -117,6 +117,31 @@ namespace Ui.Api
                 }
             }
         }
+        // sipariş sil
+        public async Task cancelOrder(int orderId)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+                    string apiURL = Url.url + "Order/cancel/" + orderId;
+                    HttpResponseMessage response = await client.DeleteAsync(apiURL);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string json = await response.Content.ReadAsStringAsync();
+                        MessageBox.Show("Siparişiniz İptal Edildi");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Siparişiniz iptal edilemedi. HTTP Hata Kodu: " + response.StatusCode);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kullanıcı veya ürün bulunamadı. Hata: " + ex.ToString());
+                }
+            }
+        }
 
         public async Task<ProductResponse> getProduct(int productId)
         {

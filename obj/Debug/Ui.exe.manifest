@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ui.exe" size="81864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ui.exe" size="100808">
       <assemblyIdentity name="Ui" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z/jCMDXonVYHjFijIyHkz1T5GOgFFuOII4HONekx5l8=</dsig:DigestValue>
+        <dsig:DigestValue>U/9ql0LLtLJkntX6i+31YcydAc/oO/htl65a3m4/E2g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

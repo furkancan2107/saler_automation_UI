@@ -21,19 +21,12 @@ namespace Ui.Pages
             InitializeComponent();
         }
 
-       
         private void Anasayfa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
              HomePage homePage = new HomePage();
             homePage.Show();
             this.Close();
         }
-
-       
-
-       
-
-        
 
         private void MyProductsPagecs_Load(object sender, EventArgs e)
         {
@@ -218,7 +211,12 @@ namespace Ui.Pages
             }
             return products;
         }
-
       
+
+        private void Card_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+       
     }
 }
