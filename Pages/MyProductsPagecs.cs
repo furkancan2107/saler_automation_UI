@@ -75,7 +75,7 @@ namespace Ui.Pages
                 card.AutoScroll = true;
 
                 PictureBox imageBox = new PictureBox();
-                imageBox.ImageLocation = product.Image;
+                imageBox.Image = ConvertImage.GetImageFromBase64(product.Image);
                 imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 imageBox.Size = Resim.Size;
                 imageBox.Location = Resim.Location;
@@ -213,10 +213,6 @@ namespace Ui.Pages
         }
       
 
-        private void Card_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
        
     }
 }

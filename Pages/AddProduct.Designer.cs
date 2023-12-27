@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Anasayfa = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -51,8 +53,11 @@
             this.ResimEkle = new System.Windows.Forms.Button();
             this.UrunEkle = new System.Windows.Forms.Button();
             this.Baslik = new System.Windows.Forms.TextBox();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,10 +70,11 @@
             this.panel1.Controls.Add(this.MyProducts);
             this.panel1.Controls.Add(this.Carts);
             this.panel1.Controls.Add(this.Giris);
+            this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.panel1.Location = new System.Drawing.Point(0, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1506, 110);
+            this.panel1.Size = new System.Drawing.Size(1506, 85);
             this.panel1.TabIndex = 7;
             // 
             // Anasayfa
@@ -76,13 +82,15 @@
             this.Anasayfa.AutoSize = true;
             this.Anasayfa.Font = new System.Drawing.Font("Wide Latin", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Anasayfa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Anasayfa.ImageKey = "house-black-silhouette-without-door.png";
             this.Anasayfa.LinkColor = System.Drawing.Color.Black;
-            this.Anasayfa.Location = new System.Drawing.Point(36, 19);
+            this.Anasayfa.Location = new System.Drawing.Point(31, 19);
             this.Anasayfa.Name = "Anasayfa";
             this.Anasayfa.Size = new System.Drawing.Size(159, 21);
             this.Anasayfa.TabIndex = 4;
             this.Anasayfa.TabStop = true;
             this.Anasayfa.Text = "Ana Sayfa";
+            this.Anasayfa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Anasayfa.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Anasayfa_LinkClicked_1);
             // 
             // linkLabel1
@@ -143,10 +151,10 @@
             // 
             // Fiyat
             // 
-            this.Fiyat.Location = new System.Drawing.Point(206, 500);
+            this.Fiyat.Location = new System.Drawing.Point(745, 417);
             this.Fiyat.Mask = "000000000000000000";
             this.Fiyat.Name = "Fiyat";
-            this.Fiyat.Size = new System.Drawing.Size(963, 22);
+            this.Fiyat.Size = new System.Drawing.Size(555, 22);
             this.Fiyat.TabIndex = 8;
             this.Fiyat.Text = "0";
             this.Fiyat.ValidatingType = typeof(int);
@@ -155,18 +163,20 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 111);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.ImageKey = "right-arrow.png";
+            this.label1.Location = new System.Drawing.Point(744, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 10;
             this.label1.Text = "Baslık";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(203, 238);
+            this.label2.Location = new System.Drawing.Point(742, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 18);
             this.label2.TabIndex = 11;
@@ -174,18 +184,17 @@
             // 
             // Aciklama
             // 
-            this.Aciklama.Location = new System.Drawing.Point(206, 273);
+            this.Aciklama.Location = new System.Drawing.Point(745, 256);
             this.Aciklama.Name = "Aciklama";
-            this.Aciklama.Size = new System.Drawing.Size(963, 180);
+            this.Aciklama.Size = new System.Drawing.Size(555, 107);
             this.Aciklama.TabIndex = 12;
             this.Aciklama.Text = "";
-            this.Aciklama.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(203, 465);
+            this.label3.Location = new System.Drawing.Point(742, 382);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 13;
@@ -195,7 +204,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(203, 545);
+            this.label4.Location = new System.Drawing.Point(742, 462);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 18);
             this.label4.TabIndex = 14;
@@ -204,9 +213,9 @@
             // Konum
             // 
             this.Konum.FormattingEnabled = true;
-            this.Konum.Location = new System.Drawing.Point(206, 580);
+            this.Konum.Location = new System.Drawing.Point(745, 497);
             this.Konum.Name = "Konum";
-            this.Konum.Size = new System.Drawing.Size(963, 24);
+            this.Konum.Size = new System.Drawing.Size(555, 24);
             this.Konum.TabIndex = 15;
             // 
             // openFileDialog1
@@ -224,11 +233,10 @@
             // openFileDialog4
             // 
             this.openFileDialog4.FileName = "openFileDialog4";
-            this.openFileDialog4.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog4_FileOk);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(206, 663);
+            this.pictureBox1.Location = new System.Drawing.Point(745, 580);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(222, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,17 +245,20 @@
             // 
             // ResimEkle
             // 
-            this.ResimEkle.Location = new System.Drawing.Point(206, 621);
+            this.ResimEkle.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResimEkle.ForeColor = System.Drawing.Color.Black;
+            this.ResimEkle.Location = new System.Drawing.Point(745, 538);
             this.ResimEkle.Name = "ResimEkle";
             this.ResimEkle.Size = new System.Drawing.Size(110, 35);
             this.ResimEkle.TabIndex = 17;
             this.ResimEkle.Text = "Resim Ekle";
             this.ResimEkle.UseVisualStyleBackColor = true;
-            this.ResimEkle.Click += new System.EventHandler(this.button1_Click);
+            this.ResimEkle.Click += new System.EventHandler(this.ResimEkle_Click);
             // 
             // UrunEkle
             // 
-            this.UrunEkle.Location = new System.Drawing.Point(608, 760);
+            this.UrunEkle.ForeColor = System.Drawing.Color.Black;
+            this.UrunEkle.Location = new System.Drawing.Point(1031, 626);
             this.UrunEkle.Name = "UrunEkle";
             this.UrunEkle.Size = new System.Drawing.Size(153, 51);
             this.UrunEkle.TabIndex = 18;
@@ -257,20 +268,39 @@
             // 
             // Baslik
             // 
-            this.Baslik.Location = new System.Drawing.Point(206, 144);
+            this.Baslik.Location = new System.Drawing.Point(745, 171);
             this.Baslik.Multiline = true;
             this.Baslik.Name = "Baslik";
-            this.Baslik.Size = new System.Drawing.Size(963, 67);
+            this.Baslik.Size = new System.Drawing.Size(555, 38);
             this.Baslik.TabIndex = 19;
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "house-black-silhouette-without-door.png");
+            this.ımageList1.Images.SetKeyName(1, "right-arrow.png");
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(89, 193);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(508, 484);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
             // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.DarkOrange;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1518, 823);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Baslik);
             this.Controls.Add(this.UrunEkle);
             this.Controls.Add(this.ResimEkle);
@@ -283,12 +313,15 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Fiyat);
             this.Controls.Add(this.panel1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "AddProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +352,7 @@
         private System.Windows.Forms.Button ResimEkle;
         private System.Windows.Forms.Button UrunEkle;
         private System.Windows.Forms.TextBox Baslik;
+        private System.Windows.Forms.ImageList ımageList1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

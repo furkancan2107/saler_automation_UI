@@ -79,5 +79,19 @@ namespace Ui
 
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+
+                PasswordText.PasswordChar = '\0';
+            }
+            else
+            {
+
+                PasswordText.PasswordChar = '*';
+            }
+        }
     }
 }

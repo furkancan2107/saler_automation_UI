@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -98,48 +99,19 @@ namespace Ui.Pages
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void openFileDialog4_FileOk(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog dialog = new OpenFileDialog())
-            {
-                dialog.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png;*.bmp|Tüm Dosyalar|*.*";
-
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-
-                    resimYolu = dialog.FileName;
-
-
-                    pictureBox1.Image = Image.FromFile(resimYolu);
-
-
-                }
-            }
-        }
-
-        private void richTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private async void UrunEkle_Click(object sender, EventArgs e)
         {
+
+            byte[] resimBytes = File.ReadAllBytes(resimYolu);
+            string base64String = Convert.ToBase64String(resimBytes);
+
             AddProductRequest product = new AddProductRequest
             {
                 Title = Baslik.Text,
                 Description = Aciklama.Text,
                 Price = int.Parse(Fiyat.Text),
-                Image = resimYolu,
+                Image = base64String,
                 Location = Konum.Text
             };
 
@@ -183,9 +155,35 @@ namespace Ui.Pages
             }
         }
 
-        private void Baslik_TextChanged(object sender, EventArgs e)
-        {
+       
 
+        private void ResimEkle_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png;*.bmp|Tüm Dosyalar|*.*";
+                string klasorYolu = Path.Combine(Application.StartupPath, "Resimler");
+
+                // Klasör yoksa oluştur
+                if (!Directory.Exists(klasorYolu))
+                {
+                    Directory.CreateDirectory(klasorYolu);
+                }
+
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                  
+                    string kaydedilenResimAdi = Guid.NewGuid().ToString() + Path.GetExtension(dialog.FileName);
+                    string kayitYolu = Path.Combine(klasorYolu, kaydedilenResimAdi);
+                    File.Copy(dialog.FileName, kayitYolu, true);
+
+                    
+                    resimYolu = kayitYolu;
+
+                    pictureBox1.Image = Image.FromFile(resimYolu);
+                }
+            }
         }
     }
 }

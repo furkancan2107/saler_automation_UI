@@ -118,7 +118,7 @@ namespace Ui.Pages
                 card.AutoScroll = true;
 
                 PictureBox imageBox = new PictureBox();
-                imageBox.ImageLocation = cart.Product.Image;
+                imageBox.Image = ConvertImage.GetImageFromBase64(cart.Product.Image);
                 imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 imageBox.Size = Resim.Size;
                 imageBox.Location = Resim.Location;
@@ -192,10 +192,7 @@ namespace Ui.Pages
             }
         }
 
-        private void toplamfiyat_Click(object sender, EventArgs e)
-        {
-          
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -205,15 +202,7 @@ namespace Ui.Pages
             ShowProductCards();
         }
 
-        private void addCart_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Card_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         private async void Öde_Click(object sender, EventArgs e)
         {

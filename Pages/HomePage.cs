@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ui.requests;
 using Ui.Api;
+using System.Threading;
 
 namespace Ui.Pages
 {
@@ -18,23 +19,13 @@ namespace Ui.Pages
     {
         public HomePage()
         {
+           
             InitializeComponent();
             flowLayoutPanel1.Controls.Clear();
             ShowProductCards();
+          
         }
       
-
-        
-
-        
-
-       
-        
-
-        
-
-        
-
         private async Task<List<ProductResponse>> GetProducts()
         {
             List<ProductResponse> products = new List<ProductResponse>();
@@ -49,11 +40,6 @@ namespace Ui.Pages
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         products = JsonConvert.DeserializeObject<List<ProductResponse>>(json);
-                        
-                        
-
-
-
                     }
                 }
                 catch (Exception ex)
@@ -64,20 +50,16 @@ namespace Ui.Pages
             return products;
         }
 
-       
-
-       
-        
-
         private async void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            flowLayoutPanel1.AutoScroll = true;
             
+            flowLayoutPanel1.AutoScroll = true;
+         
         }
+       
         private async void ShowProductCards()
         {
             List<ProductResponse> products = await GetProducts();
-
             foreach (ProductResponse product in products)
             {
                 Panel card = new Panel();
@@ -87,7 +69,7 @@ namespace Ui.Pages
                 card.AutoScroll = true;
                                
                 PictureBox imageBox = new PictureBox();
-                imageBox.ImageLocation = product.Image;
+                imageBox.Image = ConvertImage.GetImageFromBase64(product.Image);
                 imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 imageBox.Size = Resim.Size;
                 imageBox.Location = Resim.Location;
@@ -173,30 +155,7 @@ namespace Ui.Pages
             ShowProductCards();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Card_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
-        private void Resim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Baslik_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addCart_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Anasayfa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -229,9 +188,14 @@ namespace Ui.Pages
             Application.Exit();
         }
 
-        private void User_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

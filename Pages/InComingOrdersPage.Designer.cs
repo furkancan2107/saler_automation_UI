@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InComingOrdersPage));
             this.panel6 = new System.Windows.Forms.Panel();
             this.linkLabel26 = new System.Windows.Forms.LinkLabel();
             this.linkLabel27 = new System.Windows.Forms.LinkLabel();
@@ -41,9 +42,11 @@
             this.Date = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel6
@@ -136,27 +139,27 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.Card);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(112, 147);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(555, 152);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1132, 492);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(772, 492);
             this.flowLayoutPanel1.TabIndex = 5;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // Card
             // 
+            this.Card.BackColor = System.Drawing.Color.SeaShell;
             this.Card.Controls.Add(this.comboBox1);
             this.Card.Controls.Add(this.Price);
             this.Card.Controls.Add(this.Date);
             this.Card.Controls.Add(this.Title);
             this.Card.Location = new System.Drawing.Point(3, 3);
             this.Card.Name = "Card";
-            this.Card.Size = new System.Drawing.Size(1107, 93);
+            this.Card.Size = new System.Drawing.Size(736, 87);
             this.Card.TabIndex = 0;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(912, 37);
+            this.comboBox1.Location = new System.Drawing.Point(548, 33);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 4;
@@ -165,7 +168,7 @@
             // 
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Price.Location = new System.Drawing.Point(655, 37);
+            this.Price.Location = new System.Drawing.Point(388, 37);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(96, 20);
             this.Price.TabIndex = 2;
@@ -175,7 +178,7 @@
             // 
             this.Date.AutoSize = true;
             this.Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Date.Location = new System.Drawing.Point(315, 37);
+            this.Date.Location = new System.Drawing.Point(203, 37);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(99, 20);
             this.Date.TabIndex = 1;
@@ -195,30 +198,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(570, 109);
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(817, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(214, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "GELEN SİPARİŞLER";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(42, 188);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(422, 387);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // InComingOrdersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1365, 695);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel6);
             this.Name = "InComingOrdersPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "q";
-            this.Load += new System.EventHandler(this.InComingOrdersPage_Load);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.Card.ResumeLayout(false);
             this.Card.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +255,6 @@
         private System.Windows.Forms.Label Price;
         private System.Windows.Forms.Label Date;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -33,7 +33,8 @@ namespace Ui.Pages
             product = await api.getProduct(_id);
             Baslik.Text = product.Title;
             Aciklama.Text = product.Description;
-            Fiyat.Text = product.Price.ToString();
+            int fiyat = Convert.ToInt32(product.Price);
+            Fiyat.Text = fiyat.ToString();
             Konum.Text = product.Location;
         }
         private void IlListesiEkle()
@@ -56,22 +57,26 @@ namespace Ui.Pages
             Konum.Items.AddRange(iller);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+      
+
+        private void CancelEditButton_Click(object sender, EventArgs e)
         {
             HomePage page = new HomePage();
             page.Show();
             this.Close();
         }
 
-        private async void button2_Click(object sender, EventArgs e)
+        private async void UpdateProductButton_Click(object sender, EventArgs e)
         {
             UpdateProductRequest update = new UpdateProductRequest
             {
                 Title = Baslik.Text,
                 Description = Aciklama.Text,
-                Location = Konum.Text,
                 Price = int.Parse(Fiyat.Text),
                 Image = product.Image,
+                Location = Konum.Text
             };
             string jsonProduct = JsonConvert.SerializeObject(update);
 
@@ -95,6 +100,51 @@ namespace Ui.Pages
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Baslik_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Konum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Aciklama_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Fiyat_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

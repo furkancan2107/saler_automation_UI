@@ -148,7 +148,7 @@
             // 
             // Card
             // 
-            this.Card.BackColor = System.Drawing.Color.Transparent;
+            this.Card.BackColor = System.Drawing.Color.DarkOrange;
             this.Card.Controls.Add(this.Baslik);
             this.Card.Controls.Add(this.konum);
             this.Card.Controls.Add(this.delete);
@@ -161,13 +161,12 @@
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(622, 372);
             this.Card.TabIndex = 1;
-            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
             // 
             // Baslik
             // 
             this.Baslik.AutoSize = true;
             this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Baslik.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.Baslik.Location = new System.Drawing.Point(5, 192);
             this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
             this.Baslik.Name = "Baslik";
@@ -238,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1436, 697);
             this.ControlBox = false;
             this.Controls.Add(this.flowLayoutPanel1);
@@ -246,6 +245,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MyProductsPagecs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyProductsPagecs";
             this.Load += new System.EventHandler(this.MyProductsPagecs_Load);
             this.panel1.ResumeLayout(false);

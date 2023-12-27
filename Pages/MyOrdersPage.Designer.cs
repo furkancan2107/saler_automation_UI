@@ -154,11 +154,10 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1258, 579);
             this.flowLayoutPanel1.TabIndex = 11;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // Card
             // 
-            this.Card.BackColor = System.Drawing.Color.Transparent;
+            this.Card.BackColor = System.Drawing.Color.DarkOrange;
             this.Card.Controls.Add(this.Baslik);
             this.Card.Controls.Add(this.konum);
             this.Card.Controls.Add(this.Fiyat);
@@ -170,13 +169,12 @@
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(622, 372);
             this.Card.TabIndex = 2;
-            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
             // 
             // Baslik
             // 
             this.Baslik.AutoSize = true;
             this.Baslik.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Baslik.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.Baslik.Location = new System.Drawing.Point(5, 192);
             this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
             this.Baslik.Name = "Baslik";
@@ -232,19 +230,19 @@
             this.cancelOrders.TabIndex = 0;
             this.cancelOrders.Text = "İptal Et";
             this.cancelOrders.UseVisualStyleBackColor = true;
-            this.cancelOrders.Click += new System.EventHandler(this.cancelOrders_Click);
             // 
             // MyOrdersPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1352, 765);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel12);
             this.Name = "MyOrdersPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyOrdersPage";
             this.Load += new System.EventHandler(this.MyOrdersPage_Load);
             this.panel12.ResumeLayout(false);

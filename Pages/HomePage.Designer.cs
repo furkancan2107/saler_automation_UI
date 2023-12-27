@@ -39,7 +39,6 @@
             this.Resim = new System.Windows.Forms.PictureBox();
             this.addCart = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.Yenile = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sepetimToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +48,7 @@
             this.MyProducts = new System.Windows.Forms.LinkLabel();
             this.Carts = new System.Windows.Forms.LinkLabel();
             this.Giris = new System.Windows.Forms.LinkLabel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.flowLayoutPanel1.SuspendLayout();
             this.Card.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Resim)).BeginInit();
@@ -61,6 +61,7 @@
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.DarkOrange;
             this.flowLayoutPanel1.Controls.Add(this.Card);
             this.flowLayoutPanel1.Controls.Add(this.checkedListBox1);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(93, 79);
@@ -71,7 +72,7 @@
             // 
             // Card
             // 
-            this.Card.BackColor = System.Drawing.Color.Transparent;
+            this.Card.BackColor = System.Drawing.Color.DarkOrange;
             this.Card.Controls.Add(this.konum);
             this.Card.Controls.Add(this.Fiyat);
             this.Card.Controls.Add(this.User);
@@ -79,12 +80,11 @@
             this.Card.Controls.Add(this.Baslik);
             this.Card.Controls.Add(this.Resim);
             this.Card.Controls.Add(this.addCart);
-            this.Card.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Card.ForeColor = System.Drawing.Color.White;
             this.Card.Location = new System.Drawing.Point(3, 3);
             this.Card.Name = "Card";
             this.Card.Size = new System.Drawing.Size(514, 399);
             this.Card.TabIndex = 0;
-            this.Card.Paint += new System.Windows.Forms.PaintEventHandler(this.Card_Paint);
             // 
             // konum
             // 
@@ -115,7 +115,6 @@
             this.User.Size = new System.Drawing.Size(52, 25);
             this.User.TabIndex = 6;
             this.User.Text = "From";
-            this.User.Click += new System.EventHandler(this.User_Click);
             // 
             // Description
             // 
@@ -134,13 +133,12 @@
             this.Baslik.AutoSize = true;
             this.Baslik.Font = new System.Drawing.Font("Wide Latin", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Baslik.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Baslik.Location = new System.Drawing.Point(2, 218);
+            this.Baslik.Location = new System.Drawing.Point(6, 218);
             this.Baslik.MaximumSize = new System.Drawing.Size(1000, 40);
             this.Baslik.Name = "Baslik";
             this.Baslik.Size = new System.Drawing.Size(87, 40);
             this.Baslik.TabIndex = 2;
             this.Baslik.Text = "Baslik\r\n\r\n\r\n";
-            this.Baslik.Click += new System.EventHandler(this.Baslik_Click);
             // 
             // Resim
             // 
@@ -150,36 +148,26 @@
             this.Resim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Resim.TabIndex = 1;
             this.Resim.TabStop = false;
-            this.Resim.Click += new System.EventHandler(this.Resim_Click);
             // 
             // addCart
             // 
+            this.addCart.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addCart.ForeColor = System.Drawing.Color.Black;
             this.addCart.Location = new System.Drawing.Point(359, 363);
             this.addCart.Name = "addCart";
             this.addCart.Size = new System.Drawing.Size(130, 31);
             this.addCart.TabIndex = 0;
             this.addCart.Text = "Sepete Ekle";
             this.addCart.UseVisualStyleBackColor = true;
-            this.addCart.Click += new System.EventHandler(this.addCart_Click);
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.ForeColor = System.Drawing.Color.White;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(523, 3);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(10, 4);
             this.checkedListBox1.TabIndex = 1;
-            // 
-            // Yenile
-            // 
-            this.Yenile.Font = new System.Drawing.Font("Stencil", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Yenile.Location = new System.Drawing.Point(12, 306);
-            this.Yenile.Name = "Yenile";
-            this.Yenile.Size = new System.Drawing.Size(75, 23);
-            this.Yenile.TabIndex = 2;
-            this.Yenile.Text = "Yenile";
-            this.Yenile.UseVisualStyleBackColor = true;
-            this.Yenile.Click += new System.EventHandler(this.button1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -218,6 +206,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1329, 71);
             this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Anasayfa
             // 
@@ -289,18 +278,25 @@
             this.Giris.Text = "Cikis Yap";
             this.Giris.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Giris_LinkClicked);
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
+            this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1329, 683);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Yenile);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "HomePage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomePage";
+            this.Load += new System.EventHandler(this.HomePage_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.Card.ResumeLayout(false);
             this.Card.PerformLayout();
@@ -315,7 +311,6 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button Yenile;
         private System.Windows.Forms.Panel Card;
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Label Baslik;
@@ -334,5 +329,6 @@
         private System.Windows.Forms.LinkLabel Giris;
         private System.Windows.Forms.Label konum;
         private System.Windows.Forms.Label User;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }

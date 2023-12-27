@@ -39,6 +39,7 @@ namespace Ui
         private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Register register = new Register();
+            this.Hide();
             register.Show();
             
         }
@@ -51,6 +52,7 @@ namespace Ui
         private void ForgotLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ForgotPassword forgot = new ForgotPassword();
+            this.Hide();
             forgot.Show();
                   
 
@@ -76,8 +78,8 @@ namespace Ui
             if (response.IsSuccessStatusCode)
             {
                 MessageBox.Show("Başari ile giriş yapıldı");
-                HomePage homePage = new HomePage();
-                homePage.Show();
+                LoadingPage loading = new LoadingPage();
+                loading.Show();
                 İnformation.isLogin = true;
                 İnformation.username = user.Email;
                 İnformation.id = int.Parse(jsonContent);
@@ -92,10 +94,13 @@ namespace Ui
                     var errors = jsonObject["errors"];
                     if (jsonObject!=null)
                     {
-                        MessageBox.Show(errors.ToString());
+                        string ea = errors.ToString().Replace("{", "");
+                        string eb = ea.ToString().Replace("}", "");
+                        MessageBox.Show(eb);
                     }
                     else
                     {
+
                         MessageBox.Show(jsonContent);
                     }
                 }
@@ -117,6 +122,20 @@ namespace Ui
              {
                  MessageBox.Show("Kullanıcı oluşturma işlemi başarısız oldu.");
              }*/
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                
+                PasswordText.PasswordChar = '\0';
+            }
+            else
+            {
+                
+                PasswordText.PasswordChar = '*';
+            }
         }
     }
     public class MyDataModel

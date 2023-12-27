@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace Ui.Pages
         public InComingOrdersPage()
         {
             InitializeComponent();
-            
+            if(getComingOrders()!=null)
             flowLayoutPanel1.Controls.Clear();
             showInComingOrders();
         }
@@ -43,12 +44,6 @@ namespace Ui.Pages
                 card.AutoScroll = true;
 
                 Label baslik = new Label();
-                /*
-                 titleLabel.Text = product.Title;
-                titleLabel.Font = Baslik.Font;
-                titleLabel.ForeColor = Baslik.ForeColor;
-                titleLabel.Size = new Size(200,30);
-                titleLabel.Location = Baslik.Location;*/
                 baslik.Text = order.Product.Title;
                 baslik.Font = Title.Font;
                 baslik.Size = Title.Size;
@@ -76,7 +71,11 @@ namespace Ui.Pages
                 durum.Size = comboBox1.Size;
                 durum.Location = comboBox1.Location;
                 durum.ForeColor = comboBox1.ForeColor;
+                durum.Text = (string)durum.SelectedText;
+                durum.Tag = (int)order.Id;
 
+
+                durum.SelectedIndexChanged += UpdateStatusClick;
 
                 card.Controls.Add(baslik);
                 card.Controls.Add(Tarih);
@@ -88,9 +87,55 @@ namespace Ui.Pages
             }
 
         }
+
+       
+
+        private async void UpdateStatusClick(object sender, EventArgs e)
+        {
+            if (sender is ComboBox comboBox)
+            {
+                string selectedStatus = comboBox.SelectedItem.ToString();
+                int orderId = (int)comboBox.Tag;
+
+                // MessageBox.Show(selectedStatus + orderId);
+
+                SaveStatusToDatabase(orderId, selectedStatus);
+            }
+        }
+
+        private async void SaveStatusToDatabase(int orderID, string selectedStatus)
+        {
+
+            UpdateOrderStatus update = new UpdateOrderStatus
+            {
+
+                Status = selectedStatus
+            };
+            string jsonProduct = JsonConvert.SerializeObject(update);
+            var client = new HttpClient();
+            var content = new StringContent(jsonProduct, Encoding.UTF8, "application/json");
+            var response = client.PutAsync(Url.url + "Order/updateOrderStatus/" + orderID, content).Result;
+            string jsonContent = await response.Content.ReadAsStringAsync();
+
+            try {
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Durum Güncellendi");
+                    InComingOrdersPage page = new InComingOrdersPage();
+                    page.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(jsonContent);
+                }
+
+
+            } catch(Exception ex) { MessageBox.Show(ex.ToString()); }
+        }
         private void FillComboBox(ComboBox box)
         {
-            // Enum değerlerini ComboBox'a ekle
+            
             foreach (OrderStatus status in Enum.GetValues(typeof(OrderStatus)))
             {
                 box.Items.Add(status);
@@ -105,16 +150,10 @@ namespace Ui.Pages
                 {
                     string apiURL = Url.url + "Order/getOrders/"+İnformation.id;
                     HttpResponseMessage response = await client.GetAsync(apiURL);
-
                     if (response.IsSuccessStatusCode)
                     {
                         string json = await response.Content.ReadAsStringAsync();
                         orders = JsonConvert.DeserializeObject<List<Order>>(json);
-
-
-
-
-
                     }
                 }
                 catch (Exception ex)
@@ -150,15 +189,40 @@ namespace Ui.Pages
         {
             Application.Exit();
         }
+       
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private async Task<HttpResponseMessage> PatchAsync(HttpClient client, string requestUri, HttpContent content)
         {
+            var method = new HttpMethod("PATCH");
+            var request = new HttpRequestMessage(method, requestUri)
+            {
+                Content = content
+            };
 
+            return await client.SendAsync(request);
         }
 
-        private void InComingOrdersPage_Load(object sender, EventArgs e)
+        private void HandleErrorResponse(string jsonContent)
         {
-            
+            try
+            {
+                var jsonObject = JObject.Parse(jsonContent);
+                var errors = jsonObject["errors"];
+                if (jsonObject != null)
+                {
+                    MessageBox.Show(errors.ToString());
+                }
+                else
+                {
+                    MessageBox.Show(jsonContent);
+                }
+            }
+            catch (JsonReaderException)
+            {
+                MessageBox.Show(jsonContent);
+            }
         }
+
+     
     }
 }

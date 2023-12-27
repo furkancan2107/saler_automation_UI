@@ -1,7 +1,6 @@
 C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.exe.config
 C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.exe
 C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Ui.pdb
-C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.csprojAssemblyReference.cache
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Properties.Resources.resources
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.csproj.GenerateResource.cache
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.csproj.CoreCompileInputs.cache
@@ -25,3 +24,7 @@ C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.exe.manifest
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.application
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.InComingOrdersPage.resources
 C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.MyOrdersPage.resources
+C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Guna.UI.dll
+C:\Users\Furkan Can\source\repos\apiveform\Ui\bin\Debug\Guna.UI2.dll
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.Pages.LoadingPage.resources
+C:\Users\Furkan Can\source\repos\apiveform\Ui\obj\Debug\Ui.csprojAssemblyReference.cache

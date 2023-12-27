@@ -61,7 +61,7 @@ namespace Ui.Pages
                 card.AutoScroll = true;
 
                 PictureBox imageBox = new PictureBox();
-                imageBox.ImageLocation = order.Product.Image;
+                imageBox.Image = ConvertImage.GetImageFromBase64(order.Product.Image);
                 imageBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 imageBox.Size = Resim.Size;
                 imageBox.Location = Resim.Location;
@@ -78,7 +78,7 @@ namespace Ui.Pages
                 descriptionLabel.Text = order.OrderStatus;
                 descriptionLabel.ForeColor = Status.ForeColor;
                 descriptionLabel.Font = Status.Font;
-                descriptionLabel.Size = descriptionLabel.Size;
+                descriptionLabel.Size = Status.Size;
                 descriptionLabel.Location = Status.Location;
 
                 Label price = new Label();
@@ -172,15 +172,7 @@ namespace Ui.Pages
             Application.Exit();
         }
 
-        private void Card_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void MyOrdersPage_Load(object sender, EventArgs e)
         {
@@ -188,9 +180,6 @@ namespace Ui.Pages
             ShowMyProducts();
         }
 
-        private void cancelOrders_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

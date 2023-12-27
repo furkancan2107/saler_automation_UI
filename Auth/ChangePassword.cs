@@ -64,5 +64,34 @@ namespace Ui
 
             }
         }
+
+        private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
+
+        }
+
+        private void LoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked)
+            {
+
+                NewPasswordText.PasswordChar = '\0';
+            }
+            else
+            {
+
+                NewPasswordText.PasswordChar = '*';
+            }
+        }
     }
 }
